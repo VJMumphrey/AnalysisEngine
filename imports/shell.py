@@ -3,14 +3,14 @@ from imports.domain import Domain
 from imports.url import Url
 from imports.unpacme import unpac
 from imports.signature import *
-from imports.vtlookup import *
+from imports.vtcontroller import *
 
 """
 Controls the shell system that runs normal unix commands
 When a command is inputed from the program then it executes it
 """
 
-def addKey(key) -> None:
+def changeKey(key) -> None:
     # change the key in vtlookup
     pass
 
@@ -24,9 +24,7 @@ def shell() -> None:
     while(userInput.lower() != "q" or "quit"):
         print("RE_Engine> ", end="")
         
-        
         userInput = str(input())
-            
 
         # take the user input and split it up for usage
         inputLs = userInput.split(" ")
@@ -44,11 +42,11 @@ def shell() -> None:
             lookupUrl(url.url)
 
         elif (inputLs[0] == "lookupD"):
-            domain = Domain(url=inputLs[1])
+            domain = Domain(domain=inputLs[1])
             lookupDomain(domain)
 
-        elif (inputLs[0] == "addKey"):
-            addKey(inputLs[1])
+        elif (inputLs[0] == "changeKey"):
+            changeKey(inputLs[1])
 
         # utilize unpacme to get the unpacked verison of the malware
         if (file.getPackedStatus == True):

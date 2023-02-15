@@ -13,7 +13,7 @@ def lookupFile(malw):
     # if the file is unscanned then scan the file
     # this will wait for the scan to be completed
     # this helps to keep the process automated
-    with open("pwd of file", "rb") as f:
+    with open(malw.path, "rb") as f:
         analysis = client.scan_file(f, wait_for_completion=True)
 
     client.close()
