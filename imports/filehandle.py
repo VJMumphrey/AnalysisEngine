@@ -1,9 +1,9 @@
 import os
 import time
 import json
+from imports.vtcontroller import getSignature
 
 class File ():
-    
     def __init__(self, name="", path="", packedStatus=False, signature="") -> None:
         self.name = name
         self.path = path
@@ -44,8 +44,7 @@ class File ():
     def getSignature(self) -> None:
         self._signature = self.signature
 
-    # -- methods -- 
-
+    # -- methods --
     def createFolder(self) -> None:
         # creates a folder with the name and date of analysis of the filename
 
@@ -68,4 +67,3 @@ class File ():
 
         if self.getPackedStatus == False:
             self.setPackedStatus(True)
-    

@@ -1,8 +1,11 @@
 #!/usr/bin/python3
 
 import os
-
 from imports.shell import shell
+
+MAIN_FOLDER_PATH = "~/RE_ENGINE"
+DB_PATH = MAIN_FOLDER_PATH + "/DATABASE"
+DMP_PATH = MAIN_FOLDER_PATH + "/DUMPFOLDER"
 
 # displays the banner on startup
 # (temp)
@@ -19,25 +22,27 @@ def banner() -> None:
 
 # run everytime
 # check for complete setup
-def setup(folder_path) -> None:
-    if os.path.exists(folder_path + "/DataBase"):
+def setup() -> None:
+    if os.path.exists(MAIN_FOLDER_PATH):
         pass
     else:
-        os.mkdir(folder_path + "/DataBase")
+        os.mkdir(MAIN_FOLDER_PATH)
 
-    if os.path.exists(folder_path + "/DumpFolder"):
+    if os.path.exists(DB_PATH):
         pass
     else:
-        os.mkdir(folder_path + "/DumpFolder")
+        os.mkdir(DB_PATH)
+
+    if os.path.exists(DMP_PATH):
+        pass
+    else:
+        os.mkdir(DMP_PATH)
 
     banner()
 
-def main () -> None:
-    main_folder_path = "~/RE_Engine"
-    
-    setup(main_folder_path)
+def main ():
+    setup()
     shell()
-    
-    
+
 if __name__ == "__main__":
    main()

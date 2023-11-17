@@ -2,7 +2,7 @@ from imports.filehandle import File
 from imports.domain import Domain
 from imports.url import Url
 from imports.unpacme import unpac
-from imports.signature import *
+from imports.signature import gensignature
 from imports.vtcontroller import *
 
 """

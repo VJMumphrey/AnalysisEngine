@@ -39,3 +39,7 @@ signature:
 	- hashing of functions? need to find a way of doing this without getting thrown off from obfuscation
 	- test out engines. will only be for x64 arch for now. different files for each arch
 	- seperate files and calls for different archs
+
+Deployment:
+    - setup firecracker vms to run app 
+    - should be deployed in a extendable fashion for scaling
